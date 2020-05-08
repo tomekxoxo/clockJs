@@ -3,7 +3,9 @@ setMinutes();
 setHours();
 setDate();
 function setDate(){
-  
+  const currentDate = new Date();
+  const date = currentDate.getUTCDate()
+  document.querySelector('.clock__date').innerText = date
 }
 setInterval(setSeconds, 1000);
 function setSeconds() {
