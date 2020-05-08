@@ -22,6 +22,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
+  width: 100%;
 }
 
 .clock {
@@ -103,6 +104,15 @@ body {
           transform-origin: bottom;
 }
 
+.clock__hand--hour::before {
+  content: '';
+  border: 10px solid black;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transform: translate(-20%, 120%);
+          transform: translate(-20%, 120%);
+}
+
 .clock__hand--minute {
   --rotation-minutes:0;
   width: .8rem;
@@ -122,6 +132,16 @@ body {
           transform: translateX(-50%) rotate(calc(var(--rotation-seconds)*1deg));
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
+}
+
+.clock__hand--seconds::before {
+  content: '';
+  border-bottom: 20px solid #bb0f0f;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: absolute;
+  -webkit-transform: translate(-40%, -80%);
+          transform: translate(-40%, -80%);
 }
 
 .clock__number {
@@ -187,9 +207,6 @@ body {
   .clock {
     width: 300px;
     height: 300px;
-  }
-  body {
-    overflow: hidden;
   }
 }
 /*# sourceMappingURL=style.css.map */
