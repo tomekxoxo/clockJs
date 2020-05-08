@@ -38,6 +38,20 @@ body {
   background-color: #d9dddd;
 }
 
+.clock::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  bottom: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  border-radius: 50%;
+  z-index: 7;
+}
+
 .clock__date {
   position: absolute;
   background-color: #fff;
@@ -62,19 +76,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 1.8rem;
-}
-
-.clock::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: green;
-  bottom: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
-  border-radius: 50%;
 }
 
 .clock__number {
@@ -102,6 +103,7 @@ body {
           transform: translateX(-50%) rotate(calc(var(--rotation-hours)*1deg));
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
+  z-index: 1;
 }
 
 .clock__hand--hour::before {
@@ -122,6 +124,7 @@ body {
           transform: translateX(-50%) rotate(calc(var(--rotation-minutes)*1deg));
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
+  z-index: 2;
 }
 
 .clock__hand--seconds {
@@ -132,6 +135,7 @@ body {
           transform: translateX(-50%) rotate(calc(var(--rotation-seconds)*1deg));
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
+  z-index: 3;
 }
 
 .clock__hand--seconds::before {
