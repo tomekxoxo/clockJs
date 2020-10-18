@@ -134,7 +134,7 @@ body{
 .clock__number--10{transform: rotate(300deg);}
 .clock__number--11{transform: rotate(330deg);}
 
-@media (max-width: 560px){
+@media screen and (max-width: 560px){
   .clock{
     width: 300px;
     height: 300px;
